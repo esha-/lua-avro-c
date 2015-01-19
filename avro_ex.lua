@@ -9,8 +9,8 @@ local avro = require('avro')
 local cjson = require('cjson')
 
 
-local sch = {type = "record", name = "test", fields = {{name = "a", type = "int"}, {name = "b", type = "int"}}}
-local data = {{10, 11}, {12, 13}}
+local sch = {type = "record", name = "test", fields = {{name = "a", type = "int"}, {name = "b", type = "string"}}}
+local data = {{101, "helllo and"}, {20, "GET /Hello"}}
 
 local s = cjson.encode(sch)
 
@@ -21,11 +21,19 @@ local buf = ffi.new('uint8_t[4096]')
 local count = 0
 
 print ('Start encode')
-count = avro.encode(sch, data, buf, 1024)
+count, str = avro.encode(sch, data, buf, 1024)
+print ('---------------------------------')
+print ('Avro byte string')
+print (str)
 
+print ('Data count')
+print (count)
+
+print ('---------------------------------')
 print ('Start decode')
 local res = avro.decode(sch, buf, count)
 
+print ('---------------------------------')
 for k, v in pairs(res) do
     for n, d in pairs(v) do
         print (n..' = '.. d)
