@@ -38,6 +38,7 @@ void avro_value_get_by_name_f (avro_value_t *dest, const char *name, avro_value_
     check_i(avro_value_get_by_name(dest, name, field, NULL));
 }
 
+//------------------------------------
 
 void avro_value_set_int_f (avro_value_t *field, int32_t val) {
     check_i(avro_value_set_int(field, val));
@@ -46,3 +47,21 @@ void avro_value_set_int_f (avro_value_t *field, int32_t val) {
 void avro_value_get_int_f (avro_value_t *field, int32_t *val) {
     check_i(avro_value_get_int(field, val));
 }
+
+//------------------------------------
+
+void avro_value_set_string_f (avro_value_t *field, const char* val) {
+    check_i(avro_value_set_string(field, val));
+}
+
+void avro_value_get_string_f (const avro_value_t *field, const char** val, size_t* size) {
+    check_i(avro_value_get_string(field, val, size));
+}
+
+//------------------------------------
+
+
+
+
+
+
