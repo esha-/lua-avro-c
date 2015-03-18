@@ -1,15 +1,16 @@
-luvr
+#luvr
 ====
 
-lua-avro-c  
+###lua-avro-c  
 
 Now there is avro write/read through buffer example  
-*avro_buf.c*  
+`avro_buf.c`
+
 and some lua-avro module *avro/*  
 You must see example in  
-*avro_ex.lua*  
+`avro_ex.lua`
 
-Рабочий оригинал для авро encode from file:  
+Original C file with avro-encode  functions:  
 http://dcreager.github.io/avro-examples/resolved-writer.html  
-Исходники авро (ветка trunk)  
+Avro original repositories:  
 https://github.com/apache/avro/tree/trunk/lang/c  
